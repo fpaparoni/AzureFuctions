@@ -7,7 +7,7 @@ import com.microsoft.azure.serverless.functions.annotation.*;
 
 public class TimerFunction {
     @FunctionName("timerFunction")
-    @QueueOutput(name = "queueItem", queueName = "codaMessaggiInArrivo", connection = "AzureWebJobsStorage")
+    @QueueOutput(name = "queueItem", queueName = "codaMessaggiInTransito", connection = "AzureWebJobsStorage")
     public String functionHandler(
     		@TimerTrigger(name = "timerInfo", schedule = "*/30 * * * * *") String timerInfo, 
     		final ExecutionContext executionContext) {
